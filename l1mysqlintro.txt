@@ -1,0 +1,125 @@
+webserver = Apache / Nginx....
+database  = MariaDB
+PHP       = PHP 
+
+=>Comments
+
+SingleLine Comment
+# comment here
+-- comment here
+/* comment here */
+
+Multi Line Comment
+
+/*
+	comment here
+	comment here
+	comment here
+*/
+
+
+------------------------------------------
+
+
+=>Arithmethic  Operators (5 types)
+
+Operator
++ ( Add )
+- ( Subtraction )
+* ( Multiply )
+/ ( Divde/အကြွင်း )
+% ( Modulus/စားလဒ် )
+
+
+------------------------------------------
+
+=>Comparation Operators ( 9 types )
+
+= Equal					Define
+> 						Greater than
+< 						Less than
+>= 						Greater than or Equal
+<= 						Less than or Equal
+!= or <> 				Not Equal
+BETWEEN					Between as a certain range
+LIKE					Search for a pattern
+IN						To specify multiple possible values for a columns
+
+-----------------------------------------------------------------
+
+
+=Exercise Addition Operator = Syntax
+
+SELECT 10 + 2; #12
+SELECT '10' + 2; #12
+SELECT "10" + 2; #12
+SELECT 10+2, 20+30; #30 50 (combine လုပ်လို့ရ)
+SELECT '100' +"200", "300"+200; #300 500
+
+SELECT 100  + 'aung aung'; #100
+SELECT '100'  + 'aung aung'; #100
+SELECT 'aung aung' + 100; #100
+SELECT 'aung aung' + '100'; #100
+SELECT 'aung aung' + 'kyaw kyaw'; #0
+
+
+=Exercise Subtraction Operator = Syntax
+SELECT 10-2; #8
+SELECT 20-10,30 - 50;#10 15
+SELECT '1000'-'500',500 - '600'; #500 -100
+
+
+=Exercise Multiplication Operator = Syntax
+SELECT 10 * 2; #20
+SELECT 5*3,15 * 5; #15 75
+SELECT '20'*3 , '100' * '5'; #60 500
+
+
+=Exercise Division Operator = Syntax
+
+#/ နဲ့ရေးရင် ဒသမကိန်းတွေထွက်လာ
+SELECT 10 / 2; #5
+SELECT 2 / 3 , 3/5; #0.6667 0.6000
+SELECT '100' / 25 , '200' / '2'; #4 1000
+SELECT 100 / 0; #NULL
+
+#DIV နဲ့ရေးရင်ကိန်းပြည့်တွေထွက်လာ
+SELECT 10 DIV 2; #5
+SELECT 2 DIV 3 , 3 DIV 5; #0 0
+SELECT '100' DIV 25 , '200' DIV '2'; #4 1000
+SELECT 100 DIV 0; #NULL
+
+
+=Exercise Modulus Operator = Syntax
+
+SELECT 10 % 3; #1
+SELECT 20%3 , 30%5; #2 0
+SELECT '20'%5 , '500'%'300'; # 0 200
+
+SELECT 10 MOD 3; #1
+SELECT 20 MOD 3 , 30 MOD 5; #2 0
+SELECT '20' MOD 5 , '500' MOD '300'; # 0 200
+
+-------------------------------------------------
+
+
+= CRUD
+Create / Read / Update / Delete
+
+CREATE DATABASE - create a new database
+CREATE TABLE - create a new table
+
+ALTER DATABASE - modifies a database(database name change)
+ALTER TABLE - modifies a table(table name change)
+
+DROP DATABASE - delete a database
+DROP TABLE - delete a table
+
+
+
+INSERT INTO - inserts new data into table of database
+SELECT 		- extracts data from database table
+UPDATE 		- update data in a database table
+DELETE 		- delete data in a database table
+
+-------------------------------------------------

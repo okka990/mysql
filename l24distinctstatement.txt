@@ -1,0 +1,33 @@
+ => DISTINCT statement
+
+ = syntax
+
+ SELECT DISTINCT column1,column2,...
+ FROM tablename;
+
+ --------------------------------------------------------
+
+ =EXERCISE
+
+ SELECT * FROM customers;
+
+ SELECT city FROM customers;
+
+ SELECT DISTINCT city FROM customers;
+
+ SELECT age FROM customers;
+
+ SELECT DISTINCT age FROM customers;
+
+ SELECT DISTINCT age FROM customers ORDER BY age;
+
+ (error  cause (DISTINCT) is [age] and (ORDER BY) [city])
+ SELECT DISTINCT age FROM customers ORDER BY city;
+
+ SELECT DISTINCT age,city FROM customers ORDER BY age;
+ SELECT DISTINCT age,city FROM customers ORDER BY city;
+
+ SELECT COUNT(DISTINCT city) FROM customers;
+
+ //26DT
+

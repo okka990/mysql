@@ -1,0 +1,330 @@
+=>Choose Database
+USE exerciseone;
+
+=>Table List
+SHOW TABLES;
+SHOW FULL TABLES;       (will show what kind of table types)
+
+
+=>Check tables from current db to another db
+SHOW TABLES FROM databasename;
+SHOW TABLES IN databasename;
+SHOW FULL TABLES FROM databasename;
+SHOW FULL TABLES IN databasename;
+
+
+=>Create Table
+=Syntax
+
+CREATE TABLE tablename(
+	column1 datatype,
+	column2 datatype,
+	column3 datatype,
+	..........
+);
+
+
+CREATE TABLE persons(
+	id INT,
+	firstname VARCHAR(255),
+	lastname VARCHAR(255),
+	city VARCHAR(255),
+	address VARCHAR(255)
+);
+
+
+=>Drop Table (Single)
+DROP TABLE persons;
+DROP TABLE IF EXISTS persons;
+
+
+=>Drop Table (Multi / Bulk)
+DROP TABLE persons,staffs,employee,users;
+DROP TABLE IF EXISTS persons,staffs,employee,users;
+
+-------------------------------------------------------
+
+*Exercise
+
+CREATE TABLE abc(
+	name VARCHAR(10)
+);
+
+
+CREATE TABLE IF NOT EXISTS abc(
+	name VARCHAR(10)
+);
+
+
+---------------------------------------------------
+
+=>RENAME TABLE 
+
+*Syntax
+
+ALTER TABLE tablename
+RENAME TO newtablename;
+
+
+CREATE TABLE stocks(
+	item VARCHAR(100),
+	stock INT
+);
+
+
+DESC stocks;
+
+SHOW TABLES;
+
+ALTER TABLE stocks
+RENAME TO itaccessories;
+
+SHOW TABLES;
+
+
+-------------------------------------------------
+
+=> Add New Columns to table
+
+= Syntax (Single)
+
+Method 1
+ALTER TABLE tablename
+ADD COLUMN columnname datatype;
+
+Method 2
+ALTER TABLE tablename
+ADD COLUMN columnname datatype FIRST|AFTER existingcolumnname;
+
+
+
+
+= Syntax (Multi)
+
+Method 1
+ALTER TABLE tablename
+ADD COLUMN columnname datatype,
+ADD COLUMN columnname datatype,
+ADD COLUMN columnname datatype;
+
+
+Method 2
+ALTER TABLE tablename
+ADD COLUMN columnname datatype FIRST|AFTER existingcolumnname,
+ADD COLUMN columnname datatype FIRST|AFTER existingcolumnname;
+
+CREATE TABLE stocks(
+	item VARCHAR(100),
+	stock INT
+);
+
+
+DESC stocks;
+
+SHOW TABLES;
+
+ALTER TABLE stocks
+ADD COLUMN brand VARCHAR(50);
+
+DESC stocks;
+
+SHOW TABLES;
+
+
+Note:: FIRST for add first field name
+ALTER TABLE stocks
+ADD COLUMN unitprice DECIMAL(10,2) FIRST;
+
+
+ALTER TABLE stocks
+ADD COLUMN madeby VARCHAR(50) AFTER item;
+
+
+DESC stocks;
+
+=Exercise (Multi)
+
+ALTER TABLE stocks
+ADD COLUMN status INT AFTER brand,
+ADD COLUMN createdby VARCHAR(50)  AFTER status;
+
+DESC stocks;
+
+-----------------------------------------------------
+
+=>RENAME column in table
+
+*Syntax
+
+ALTER TABLE newtablename
+CHANGE COLUMN oldcolumnname newcolumnname datatype;
+
+ALTER TABLE stocks
+CHANGE COLUMN stock totalqty INT;
+
+ALTER TABLE stocks
+CHANGE COLUMN madeby manufacturbye VARCHAR(100);
+
+DESC stocks;
+
+-----------------------------------------------------
+
+=> Drop Columns in table
+
+=Syntax (Single)
+
+ALTER TABLE tablename
+DROP COLUMN columnname;
+
+=Syntax (Multi)
+
+ALTER TABLE tablename
+DROP COLUMN columnname,
+DROP COLUMN columnname;
+
+=Exercise
+
+ALTER TABLE persons
+DROP COLUMN city;
+
+DESC persons;
+
+ALTER TABLE persons
+DROP COLUMN firstname,
+DROP COLUMN lastname;
+
+DESC persons;
+
+
+-----------------------------------------------------
+
+=>Create Table as Statment (Clone | Copy)
+
+=Syntax
+
+CREATE TABLE IF NOT EXISTS newtable AS
+SELECT * FROM existingtable;
+
+
+
+=Exercise
+
+CREATE TABLE IF NOT EXISTS staffs AS
+SELECT * FROM persons;
+
+
+DESC staffs;
+SELECT * FROM staffs;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-------------------------------------------------------------------------------------------------------------------------
+My Note
+*INT => number
+*VARCHAR(size) => max 255
+							Single				Multi/Bulk
+*TABLE DELETE(2) => DROP TABLE tablename / DROP TABLE tablename,tablename.....
+					DROP TABLE IF EXISTS tablename 
+*DESC(DESCRIBE) က table တည်ဆောက်ပုံကိုပြန်ကြည့်
+*column ရဲ့ ရှေ့ကထည့်စေချင် FIRST
+*ဘာမှပြောမထားရင် ရှေ့ဆုံးမှာပေါ်
+*column ရဲ့ နောက်ကထည့်စေချင် AFTER
+*AFTER နော်က်က ဘာမှမထည့်လို့မရ
+*ငွေကြေးနဲ့ပက်သက်ရင် DECIMAL(10,2) သုံး
+*COLUMN ကိုဖျက်ချင်ရင် 2 မျိုးရှိ 
+ALTER TABLE tablename
+DROP COLUMN columnname;
+

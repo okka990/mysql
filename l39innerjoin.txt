@@ -1,0 +1,86 @@
+ => INNER JOIN
+
+
+SELECT * FROM buyers;
+SELECT * FROM orders;
+
+=>>> method 1
+
+#ERROR
+SELECT * FROM buyers,orders
+WHERE id = buyer_id;
+
+
+SELECT * FROM buyers,orders
+WHERE buyers.id = orders.buyer_id;
+
+SELECT * FROM buyers,orders
+WHERE orders.buyer_id = buyers.id;
+
+
+SELECT * FROM orders,buyers
+WHERE buyers.id = orders.buyer_id;
+
+SELECT * FROM orders,buyers
+WHERE orders.buyer_id = buyers.id;
+
+--------------------------------------------
+
+=>>> method 2
+
+SELECT * FROM buyers
+JOIN orders
+ON orders.buyer_id = buyers.id;
+
+SELECT * FROM buyers
+JOIN orders
+ON buyers.id = orders.buyer_id;
+
+
+SELECT * FROM orders
+JOIN buyers
+ON orders.buyer_id = buyers.id;
+
+SELECT * FROM orders
+JOIN buyers
+ON buyers.id = orders.buyer_id;
+
+
+SELECT * FROM buyers
+INNER JOIN orders
+ON orders.buyer_id = buyers.id;
+
+SELECT * FROM buyers
+INNER JOIN orders
+ON buyers.id = orders.buyer_id;
+
+
+SELECT * FROM orders
+INNER JOIN buyers
+ON orders.buyer_id = buyers.id;
+
+SELECT * FROM orders
+INNER JOIN buyers
+ON buyers.id = orders.buyer_id;
+
+--------------------------------------------
+
+SELECT firstname,lastname,orderdate,amount FROM buyers
+JOIN orders
+ON buyers.id = orders.buyer_id;
+
+SELECT firstname,lastname,orderdate,amount FROM orders
+JOIN buyers
+ON orders.buyer_id = buyers.id ;
+
+4JJ
+
+--------------------------------------------
+
+
+
+
+
+
+
+

@@ -1,0 +1,64 @@
+	=> CONCAT
+
+	= syntax
+
+
+	SELECT CONCAT(columnname1,columnname2,....)FROM tablename;
+
+	-------------------------------------------
+
+
+	SELECT CONCAT('Hello','World');
+	SELECT CONCAT('Hello',' ','World');  
+	SELECT CONCAT('Hello','...','World'); 
+	SELECT CONCAT('Hello','...','World',' ',"We are welcome"); 
+
+	SELECT CONCAT('Hello', 12345);
+	SELECT CONCAT('Hello', "12345");
+	SELECT CONCAT(10,20);
+
+	SELECT * FROM suppliers;
+
+	SELECT CONCAT(firstname,lastname) FROM suppliers;
+	SELECT CONCAT(firstname," ",lastname) AS fullname FROM suppliers;
+	SELECT CONCAT(firstname," ",lastname) AS fullname,phone FROM suppliers;
+
+
+	SELECT firstname AS first,lastname AS last,
+	CONCAT(firstname," ",lastname) AS fullname,
+	phone AS phonenumber
+	FROM suppliers;
+
+	SELECT firstname AS first,lastname AS last,
+	CONCAT(firstname," ",lastname) AS fullname,
+	phone AS "phone number"   //  need  ""
+	FROM suppliers; 
+
+
+
+	CONCAT_
+	WS (concat with separator)
+
+	=syntax
+	SELECT CONCAT('_',columnname1,columnname2)FROM tablename;
+
+	SELECT CONCAT_WS('_',columnname1,columnname2)FROM tablename;  (optional)
+	SELECT CONCAT_ws('_',columnname1,columnname2)FROM tablename;  (optional)
+
+	=exercise
+	SELECT CONCAT(' ',firstname,lastname)FROM suppliers; 
+
+	SELECT CONCAT('-',firstname,lastname)FROM suppliers;
+	SELECT CONCAT('/',firstname,lastname,phone)FROM suppliers;
+
+
+	SELECT CONCAT('/',"firstname","lastname");     /firstnamelastname
+	SELECT CONCAT_ws('/',"firstname","lastname");   firstname/lastname
+	
+	-----------------------------------------------
+
+
+	
+
+
+

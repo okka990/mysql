@@ -1,0 +1,43 @@
+l1 file revision
+
+
+(l1mysqlintro)
+
+arithemetic operator
++
+-
+*
+/  DIV
+%  MOD	
+
+
+comparision operator 9 types
+= 
+>
+>=
+<
+<=
+!=  (or) <>
+BETWEEN
+LIKE
+IN
+	
+CRUD Create / Read / Update / Delete
+
+CREATE DATABASE
+CREATE TABLE
+
+ALTER DATABASE
+ALTER TABLE
+
+DROP DATABASE
+DROP TABLE
+
+INSERT INTO	
+SELECT 
+UPDATE
+DELETE DATA
+
+(l2createdatabase)
+
+

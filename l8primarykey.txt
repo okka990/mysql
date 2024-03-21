@@ -1,0 +1,153 @@
+=> primary key (must unique /must not no value)
+
+Method 1
+
+CREATE TABLE IF NOT EXISTS workers(
+	id INT NOT NULL PRIMARY KEY,
+	firstname VARCHAR(50) NOT NULL,
+	lastname VARCHAR(50),
+	age INT
+
+);
+
+Method 2
+
+CREATE TABLE IF NOT EXISTS workers(
+	id INT NOT NULL,
+	firstname VARCHAR(50) NOT NULL,
+	lastname VARCHAR(50),
+	age INT,
+	PRIMARY KEY(id)
+
+);
+
+=>Without Primary Key
+CREATE TABLE IF NOT EXISTS workers(
+	id INT NOT NULL ,
+	firstname VARCHAR(50) NOT NULL,
+	lastname VARCHAR(50),
+	age INT
+
+);
+
+
+INSERT INTO workers (id,firstname,lastname,age)
+VALUES (1,"zaw","zaw",20),
+		 (2,"aung","aung",17);
+
+=>Without Primary Key
+CREATE TABLE IF NOT EXISTS developers(
+	id INT NOT NULL PRIMARY KEY,
+	firstname VARCHAR(50) NOT NULL,
+	lastname VARCHAR(50),
+	age INT
+
+);
+
+INSERT INTO workers (id,firstname,lastname,age)
+VALUES (1,"nu","nu",22),
+		 (3,"yu","yu",15);
+
+ ------------------------------------------
+
+
+ CREATE TABLE IF NOT EXISTS engineers(
+ 	id INT NOT NULL AUTO_INCREMENT,
+ 	firstname VARCHAR(50) NOT NULL,
+ 	lastname VARCHAR(50) NOT NULL,
+	age INT NOT NULL,
+	gender VARCHAR(10) NOT NULL DEFAULT 'male',
+	PRIMARY KEY (id)
+ );
+
+ DESC engineers;
+ SHOW INDEX FROM engineers;
+
+ INSERT INTO engineers(firstname,lastname,age,gender)
+ VALUES ('aye','mya',25,'female');
+
+ INSERT INTO engineers(firstname,lastname,age)
+ VALUES ('tun','tun',25),
+ 			('tar','tuhlan',35);
+
+ INSERT INTO engineers(firstname,lastname,age)
+ VALUES ('kyaw','kyaw',20),
+ 			('aung','aung',15); 
+
+ ------------------------------------------
+
+ => add primary key
+
+
+DESC workers;
+
+ = METHOD 1
+ ALTER TABLE workers
+ ADD COLUMN id INT NOT NULL AUTO_INCREMENT PRIMARY KEY FIRST;
+
+ = METHOD 2
+ ALTER TABLE workers
+ ADD COLUMN id INT NOT NULL AUTO_INCREMENT FIRST,
+ ADD PRIMARY KEY (id);
+ PRIMARY KEY (id); // cant
+
+
+  15PK
+
+ ALTER TABLE workers
+ DROP COLUMN id;
+
+ SHOW INDEX FROM workers;
+
+
+ -----------------------------------------
+
+ Drop PRIMARY KEY
+
+ DESC workers;
+ SHOW INDEX FROM workers;
+
+ *ERROR = WE need to remove auto increment first
+ ALTER TABLE workers DROP PRIMARY KEY;
+
+ ALTER TABLE workers MODIFY id INT NOT NULL;
+ ALTER TABLE workers DROP PRIMARY KEY;
+
+ DESC workers;
+ SHOW INDEX FROM workers;
+
+	-----------------------------------------
+
+
+
+
+
+testing in compiler
+
+
+  CREATE TABLE IF NOT EXISTS engineers(
+ 	id INT NOT NULL AUTO_INCREMENT,
+ 	firstname VARCHAR(50) NOT NULL,
+ 	lastname VARCHAR(50) NOT NULL,
+	age INT NOT NULL,
+	gender VARCHAR(10) NOT NULL DEFAULT 'male',
+	PRIMARY KEY (id)
+ );
+
+ DESC engineers;
+ SHOW INDEX FROM engineers;
+
+ INSERT INTO engineers(firstname,lastname,age,gender)
+ VALUES ('aye','mya',25,'female');
+
+ INSERT INTO engineers(firstname,lastname,age)
+ VALUES ('tun','tun',25),
+ 			('tar','tuhlan',35);
+
+ INSERT INTO engineers(firstname,lastname,age)
+ VALUES ('kyaw','kyaw',20),
+ 			('aung','aung',15);
+
+SELECT * FROM engineers;
+
+DESC engineers;

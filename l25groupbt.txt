@@ -1,0 +1,66 @@
+=> group by clause
+
+=syntax
+
+SELECT column1,column2,...
+FROM tablename
+WHERE ....
+GROUP BY column1,column2...;
+
+
+
+---------------------------------------------
+
+
+=> GROUP BY vs DISTINCT
+
+SELECT DISTINCT city FROM customers;
+SELECT city FROM customers GROUP BY city;
+
+SELECT DISTINCT age FROM customers;
+SELECT age FROM customers GROUP BY age;
+
+---------------------------------------------
+
+=> GROUP BY clause with count()
+
+   SELECT * FROM customers;
+
+   SELECT COUNT(*),city FROM customers GROUP BY city;
+   SELECT city,COUNT(*),city FROM customers GROUP BY city;
+
+   SELECT COUNT(*),age
+   FROM customers
+   GROUP BY age
+   ORDER BY age DESC;
+
+---------------------------------------------
+
+=> GROUP BY clause with MIN()/MAX()
+
+	SELECT * FROM customers;
+	SELECT COUNT(*),AMOUNT FROM customers GROUP BY amount;
+	SELECT COUNT(*),AMOUNT FROM customers GROUP BY city;
+
+	SELECT city FROM customers GROUP BY city;
+	SELECT city,SUM(amount) FROM customers GROUP BY city;
+
+
+	SELECT city,MIN(amount) FROM customers GROUP BY city;
+	SELECT city,MAX(amount) FROM customers GROUP BY city;
+
+	SELECT city,COUNT(*),MIN(amount) FROM customers GROUP BY city;
+	SELECT city,COUNT(*),MAX(amount) FROM customers GROUP BY city;
+
+	SELECT city,AVG(amount) FROM customers GROUP BY city;
+
+	=> CONCAT()
+
+	SELECT CONCAT('CUSTOMERS IN ',city) ,MAX(amount) FROM customers GROUP BY city;
+	SELECT CONCAT('CUSTOMERS IN ',city) AS 'Show city',MAX(amount) FROM customers GROUP BY city;
+
+
+
+
+
+

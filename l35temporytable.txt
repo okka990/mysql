@@ -1,0 +1,36 @@
+=> Temporary Table
+
+= Syntax
+
+
+CREATE TEMPORARY TABLE IF NOT EXISTS tablename(
+	column1 datatype,
+	column1 datatype,
+	column1 datatype,
+	.....
+);
+
+
+
+
+CREATE TEMPORARY TABLE IF NOT EXISTS chatrooms(
+	id INT NOT NULL AUTO_INCREMENT ,
+	name VARCHAR(20),
+	age INT,
+	city VARCHAR(20),
+	PRIMARY KEY(id)
+);
+
+
+DESC chatrooms;
+SHOW TABLES;
+
+INSERT INTO chatrooms(name,age,city)
+VALUES('aung aung',20,'yangon'),
+('kyaw kyaw',20,'mandalay'),
+('tun tun',20,'bago');
+
+
+=> drop temporary table
+DROP TABLE chatrooms;
+DROP TEMPORARY TABLE chatrooms;
